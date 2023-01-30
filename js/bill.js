@@ -4,9 +4,20 @@ export default class Bill {
   }
 
   /** @param {string} amountStr */
+
   addAmount(amountStr) {
-    // your code
+    this.amounts.push(+amountStr);
   }
 
-  // your code
+  getCount() {
+    return this.amounts.length;
+  }
+
+  getTotal() {
+    return this.amounts.reduce((total, current) => total + current);
+  }
+
+  getAverage() {
+    return this.getTotal() / this.getCount();
+  }
 }
